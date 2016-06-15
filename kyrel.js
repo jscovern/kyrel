@@ -20,24 +20,24 @@ var row, colors, kyrel, return_value, rando;
 */
 
 var initial_state = [ '.', '.', '.', '.', '.' ];
+var firstEntry = initial_state[0];
 
 function main(n) {
-
-  //////////////////////////////////
-  ////                          ////
-  //// v YOUR CODE BELOW HERE v ////
-  ////                          ////
-  //////////////////////////////////
-
-
-
-  //////////////////////////////////
-  ////                          ////
-  //// ^ YOUR CODE ABOVE HERE ^ ////
-  ////                          ////
-  //////////////////////////////////
-
-} // END MAIN
+  erase();
+  moveRight();
+  moveRight();
+  moveRight();
+  moveRight();
+  if (firstEntry==="g"){
+    useGreen();
+    draw();
+  }else if(firstEntry==="b") {
+    useBlue();
+    draw();
+  }else {
+    erase();
+  }
+} 
 
 
 

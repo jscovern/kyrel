@@ -14,3 +14,52 @@ function main(n) {
   moveRight();
   erase();
 }
+
+
+Day 2 Exercises:
+
+Exercise 1:
+var initial_state = ['b', 'b', 'b', 'b', ‘b’];
+
+function main(n) {
+  moveRight();
+  erase();
+  moveRight();
+  moveRight();
+  erase();
+} 
+
+Exercise 2:
+var initial_state = [ 'g', 'g', 'g', '.', '.' ];
+
+function main(n) {
+  moveRight();
+  useBlue();
+  draw();
+  moveRight();
+  moveRight();
+  draw();
+} 
+
+Exercise 3:
+note: initial_state can be: [ '.', '.', '.', '.', '.' ] or [ ‘b’, '.', '.', '.', '.' ] or [ ‘g’, '.', '.', '.', '.' ].  Below I use the all blanks as an example.
+
+var initial_state = [ '.', '.', '.', '.', '.' ];
+var firstEntry = initial_state[0];
+
+function main(n) {
+  erase();
+  moveRight();
+  moveRight();
+  moveRight();
+  moveRight();
+  if (firstEntry==="g"){
+    useGreen();
+    draw();
+  }else if(firstEntry==="b") {
+    useBlue();
+    draw();
+  }else {
+    erase();
+  }
+} 
