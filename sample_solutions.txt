@@ -63,3 +63,82 @@ function main(n) {
     erase();
   }
 } 
+
+Day 3 Exercises:
+Exercise 1:
+var initial_state = [ '.', '.', '.', '.', '.' ];
+
+function main(n) {
+  useBlue();
+  for (var i=0; i<initial_state.length; i++) {
+    draw();
+    moveRight();
+  }
+} 
+
+
+Exercise 2:
+var initial_state = [ 'b', '.', '.', '.', '.' ];
+//note: the initial_state could also be: [ ‘g’, '.', '.', '.', '.' ];
+function main(n) {
+  if(onBlue()) {
+    useBlue();
+  } else if(onGreen()) {
+    useGreen();
+  } else {
+    return;
+  }
+
+  for (var i=0; i<initial_state.length; i++) {
+    draw();
+    moveRight();
+  }
+}
+
+
+Exercise 3:
+var initial_state = [ '.', '.', '.', '.', '.' ];
+
+function main(n) {
+  useBlue();
+  for(var i=1; i<=n; i++) {
+    draw();
+    moveRight();
+  }
+} 
+
+Exercise 4:
+var initial_state = [ 'b', 'b', 'b', 'b', 'b' ];
+
+function main(n) {
+  for(var i=2; i<initial_state.length+2; i++) {
+    if(i%2===0) {
+      erase();
+    }
+    moveRight();
+  }
+} 
+
+Exercise 5:
+var initial_state = [ 'b', 'b', 'b', 'b', 'b' ];
+
+function main(n) {
+  for(var i=2; i<initial_state.length+2; i++) {
+    if(i%2===1) {
+      erase();
+    }
+    moveRight();
+  }
+} 
+
+Exercise 6:
+var initial_state = [ 'b', 'b', 'b', 'b', 'b' ];
+
+function main(n) {
+  for(var i=2; i<initial_state.length+2; i++) {
+    if(i%2===1) {
+      erase();
+    }
+    moveRight();
+  }
+} 

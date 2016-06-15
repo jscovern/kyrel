@@ -19,27 +19,25 @@ var row, colors, kyrel, return_value, rando;
     'g' => green
 */
 
-var initial_state = [ '.', '.', '.', '.', '.' ];
-var firstEntry = initial_state[0];
+var initial_state = [ 'b', 'b', 'b', 'b', 'b' ];
 
 function main(n) {
-  erase();
-  moveRight();
-  moveRight();
-  moveRight();
-  moveRight();
-  if (firstEntry==="g"){
-    useGreen();
-    draw();
-  }else if(firstEntry==="b") {
-    useBlue();
-    draw();
-  }else {
-    erase();
+  for(var i=1; i<=initial_state.length; i++) {
+    if(i%n===0){
+      erase();
+    }
+    moveRight();
   }
 } 
 
-
+var person="jamie";
+console.log("person before function is "+person);
+function rename() {
+  var person="zeb";
+  console.log("person inside function is "+person);
+}
+rename();
+console.log("person outside function at end is "+person);
 
 
 
