@@ -205,3 +205,77 @@ function main(n) {
     moveRight();
   }
 }
+
+Day 5:
+Exercise 1:
+var initial_state = [ 'g', 'b', '.', '.', 'g' ];
+//note: initial_state could also be:  ['.', '.', 'b', '.', '.']
+function main(n) {
+  useBlue();
+  var useNext=false;
+  for (var i=0; i<initial_state.length; i++) {
+    if(useNext) {
+      draw();
+      break;
+    }
+    if(onBlue()) {
+      erase();
+      useNext = true;
+    }
+    moveRight();
+  }
+}
+
+Exercise 2:
+var initial_state = [ 'g', 'b', 'b', '.', '.' ];
+//note: initial_state could also be [ 'g', 'b', ‘.’, '.', '.' ]
+function main(n) {
+  for (var i=0; i<initial_state.length; i++) {
+    if(onBlue() || onGreen()) {
+      moveLeft();
+      erase();
+      moveRight();
+    }
+    moveRight();
+  }
+}
+
+Exercise 3:
+var initial_state = [ 'b', '.', 'b', '.', '.' ];
+function main(n) {
+  var blueCounter = 0;
+  useBlue();
+  for (var i=0; i<initial_state.length; i++) {
+    if(onBlue()) {
+      erase();
+      blueCounter++;
+    }
+    moveRight();
+  }
+  for (var x=1; x<=blueCounter; x++) {
+    draw();
+    moveLeft();
+  }
+}
+
+Exercise 4:
+var initial_state = [ '.', 'b', 'b', '.', 'b' ];
+function main(n) {
+  var blueCounter = 0;
+  useBlue();
+  for (var i=0; i<initial_state.length; i++) {
+    if(onBlue()) {
+      erase();
+      blueCounter++;
+    }
+    moveRight();
+  }
+  for (var y=1; y<=(initial_state.length - blueCounter); y++) {
+    moveLeft();
+  }
+  
+  for (var x=1; x<=blueCounter; x++) {
+    draw();
+    moveLeft();
+  }
+}

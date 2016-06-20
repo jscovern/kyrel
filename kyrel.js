@@ -19,22 +19,26 @@ var row, colors, kyrel, return_value, rando;
     'g' => green
 */
 
-var initial_state = [ 'b', 'g', 'g', '.', 'g' ];
+var initial_state = [ '.', 'b', 'b', '.', 'b' ];
 function main(n) {
-  for (var i=initial_state.length-1; i>=0; i--) {
-    if(initial_state[i]==='g') {
-      useGreen();
-      draw();
-    } else if (initial_state[i]==='b') {
-      useBlue();
-      draw();
-    } else {
+  var blueCounter = 0;
+  useBlue();
+  for (var i=0; i<initial_state.length; i++) {
+    if(onBlue()) {
       erase();
+      blueCounter++;
     }
     moveRight();
   }
+  for (var y=1; y<=(initial_state.length - blueCounter); y++) {
+    moveLeft();
+  }
+  
+  for (var x=1; x<=blueCounter; x++) {
+    draw();
+    moveLeft();
+  }
 }
-
 //////////////////////////////
 //
 // BEWARE, INNER WORKINGS BELOW
